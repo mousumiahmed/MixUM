@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MixUM">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MixUM">
             <intent-filter>

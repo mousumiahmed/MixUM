@@ -5,6 +5,7 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
 android {
     namespace = "com.mixbyte.mixum"
     compileSdk = 36
@@ -17,6 +18,14 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        create("release") {
+            storeFile = file("C:/Users/mousu/AndroidStudioProjects/MixU/keystore/my-release-key.jks")
+            storePassword = "Aralink@12345"
+            keyAlias = "mixu_key_alias"
+            keyPassword = "Aralink@12345"
+        }
     }
 
     buildTypes {
@@ -79,3 +88,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+

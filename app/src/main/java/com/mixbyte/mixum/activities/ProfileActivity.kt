@@ -21,7 +21,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private var imageUri: Uri? = null
 
-    private val PICK_IMAGE = 100
+    private val PICKIMAGE = 100
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     private val storage = FirebaseStorage.getInstance()
@@ -39,7 +39,7 @@ class ProfileActivity : AppCompatActivity() {
         imageView.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
-            startActivityForResult(intent, PICK_IMAGE)
+            startActivityForResult(intent, PICKIMAGE)
         }
 
         uploadBtn.setOnClickListener {
@@ -69,7 +69,7 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
+        if(requestCode == PICKIMAGE && resultCode == RESULT_OK){
             imageUri = data?.data
             Glide.with(this).load(imageUri).into(imageView)
         }
